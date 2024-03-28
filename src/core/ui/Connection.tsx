@@ -184,6 +184,10 @@ const Connection = (props: IConnectionProps) => {
         window.removeEventListener('mouseup', onValueChange);
 
         rangeDraggingLastAngle.current = undefined;
+
+        if (typeof settings.onClickUp === 'function') {
+            settings.onClickUp();
+        }
     };
 
     const onMouseDown = (evt: ReactMouseEvent) => {

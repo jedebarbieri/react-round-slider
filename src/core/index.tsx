@@ -251,11 +251,6 @@ export const RoundSlider = (props: ISettings) => {
                 const updatedPointers: ISettingsPointer[] = updatedData();
                 props.onChange(updatedPointers);
             }
-
-            if (typeof props.onClickUp === 'function') {
-                const updatedPointers: ISettingsPointer[] = updatedData();
-                props.onClickUp(updatedPointers);
-            }
         }
 
         setSelectedPointerId(pointer.id);

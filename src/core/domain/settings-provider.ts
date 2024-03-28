@@ -7,7 +7,7 @@ export interface ISettings {
 
     // events ---------------
     onChange?: (pointers: ISettingsPointer[]) => void;
-    onClickUp?: (pointers: ISettingsPointer[]) => void;
+    onClickUp?: () => void;
 
     // data -----------------
     min?: number | string;
