@@ -187,6 +187,9 @@ const Connection = (props: IConnectionProps) => {
 
         if (typeof settings.onClickUp === 'function') {
             settings.onClickUp();
+        } else {
+            console.log('onClickUp is not a function');
+            console.log(settings);
         }
     };
 
