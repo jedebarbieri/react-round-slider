@@ -222,9 +222,8 @@ export const RoundSlider = (props: ISettings) => {
 
             setPointers(_pointers);
 
-            if(typeof props.onChange === 'function') {
-
-                const updatedPointers: ISettingsPointer[] = _pointers.pointers.map(pointer => {
+            const updatedData = (): ISettingsPointer[] =>{
+                return _pointers.pointers.map(pointer => {
 
                     const val = angle2value(
                         data,
@@ -246,7 +245,16 @@ export const RoundSlider = (props: ISettings) => {
                     };
                 });
 
+            }
+
+            if(typeof props.onChange === 'function') {
+                const updatedPointers: ISettingsPointer[] = updatedData();
                 props.onChange(updatedPointers);
+            }
+
+            if (typeof props.onClickUp === 'function') {
+                const updatedPointers: ISettingsPointer[] = updatedData();
+                props.onClickUp(updatedPointers);
             }
         }
 
